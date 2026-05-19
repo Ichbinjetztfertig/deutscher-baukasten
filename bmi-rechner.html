@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>BMI-Rechner</h1>
+      <form id="bmi-form">
+        <div class="form-group">
+          <label for="weight">Gewicht (kg)</label>
+          <input type="number" id="weight" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label for="height">Größe (cm)</label>
+          <input type="number" id="height" step="0.1" required>
+        </div>
+        <button type="button" id="bmi-calc">Berechnen</button>
+      </form>
+      <p id="bmi-result"></p>
+      <a class="back-button" href="index.html">← Zurück zur Übersicht</a>
+    </div>
+  </div>
+  <footer>
+    © 2026 Deutscher Baukasten
+  </footer>
+  <script>
+    document.getElementById('bmi-calc').addEventListener('click', function() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value);
+      if (weight > 0 && height > 0) {
+        const bmi = weight / Math.pow((height/100), 2);
+        document.getElementById('bmi-result').textContent = 'BMI: ' + bmi.toFixed(2);
+      } else {
+        document.getElementById('bmi-result').textContent = 'Bitte gültige Werte eingeben.';
+      }
+    });
+  </script>
+</body>
+</html>
