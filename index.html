@@ -20,7 +20,11 @@
     <h1>Willkommen beim Deutscher Baukasten</h1>
     <p>Hier finden Sie kostenlose Online-Rechner und nützliche Tools für Alltag, Arbeit und Finanzen.</p>
 
-    <h2>Rechner &amp; Tools</h2>
+   
+            <div class="search-container" style="margin-top: 15px;">
+          <input type="text" id="search" placeholder="Suchbegriff eingeben..." onkeyup="filterList()" style="width: 100%; padding: 10px; border-radius: 8px; border:1px solid #ccc;">
+        </div>
+<h2>Rechner &amp; Tools</h2>
     <ul>
       <li><a href="prozentrechner.html">Prozentrechner</a></li>
       <li><a href="mwst-rechner.html">MwSt-Rechner</a></li>
@@ -34,14 +38,36 @@
       <li><a href="spritkosten-rechner.html">Spritkosten-Rechner</a></li>
     </ul>
 
-    <p style="margin-top: 20px;">
+    
+            <script>
+          function filterList() {
+            var input = document.getElementById('search');
+            var filter = input.value.toLowerCase();
+            var ul = document.querySelector('ul');
+            var li = ul.getElementsByTagName('li');
+            for (var i = 0; i < li.length; i++) {
+              var a = li[i].getElementsByTagName('a')[0];
+              var textValue = a.textContent || a.innerText;
+              if (textValue.toLowerCase().indexOf(filter) > -1) {
+                li[i].style.display = '';
+              } else {
+                li[i].style.display = 'none';
+              }
+            }
+          }
+        </script>
+<p style="margin-top: 20px;">
       <a class="back-button" href="impressum.html">Impressum</a>
       <a class="back-button" href="datenschutz.html">Datenschutz</a>
-    </p>
+    </<footer>
   </div>
-</div>
+</di<footer>
 
-<footer>
+<fo
+  
+
+        </diiv>
+ot
   &copy; 2026 Deutscher Baukasten
 </footer>
 
