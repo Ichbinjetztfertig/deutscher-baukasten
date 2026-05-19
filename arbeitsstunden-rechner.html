@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbeitsstunden-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Arbeitsstunden-Rechner</h1>
+      <p>Berechne die Dauer zwischen Start- und Endzeit in Stunden.</p>
+      <div class="form-group">
+        <label for="start">Startzeit:</label>
+        <input type="time" id="start">
+      </div>
+      <div class="form-group">
+        <label for="ende">Endzeit:</label>
+        <input type="time" id="ende">
+      </div>
+      <button onclick="berechnen()">Berechnen</button>
+      <p id="ergebnis" style="font-weight:bold; margin-top:10px;"></p>
+      <a class="back-button" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </div>
+  <script>
+    function berechnen() {
+      var start = document.getElementById('start').value;
+      var ende = document.getElementById('ende').value;
+      if (start === '' || ende === '') {
+        document.getElementById('ergebnis').textContent = 'Bitte Start- und Endzeit eingeben.';
+        return;
+      }
+      var startDate = new Date('1970-01-01T' + start + 'Z');
+      var endDate = new Date('1970-01-01T' + ende + 'Z');
+      var diffMs = endDate - startDate;
+      if (diffMs < 0) {
+        diffMs += 24 * 60 * 60 * 1000;
+      }
+      var hours = diffMs / (1000 * 60 * 60);
+      document.getElementById('ergebnis').textContent = 'Dauer: ' + hours.toFixed(2) + ' Stunden';
+    }
+  </script>
+</body>
+</html>
