@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MwSt-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>MwSt-Rechner</h1>
+      <p>Berechne den Brutto- und Netto-Betrag mit Mehrwertsteuer.</p>
+      <div class="form-group">
+        <label for="betrag">Betrag (Netto):</label>
+        <input type="number" id="betrag" placeholder="Betrag eingeben">
+      </div>
+      <div class="form-group">
+        <label for="steuersatz">MwSt-Satz (%):</label>
+        <select id="steuersatz">
+          <option value="19">19 %</option>
+          <option value="7">7 %</option>
+        </select>
+      </div>
+      <button onclick="berechnen()">Berechnen</button>
+      <div id="ergebnis" style="margin-top:10px; font-weight:bold;"></div>
+      <a class="back-button" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </div>
+  <script>
+    function berechnen() {
+      var betrag = parseFloat(document.getElementById('betrag').value);
+      var steuersatz = parseFloat(document.getElementById('steuersatz').value);
+      if (isNaN(betrag) || isNaN(steuersatz)) {
+        document.getElementById('ergebnis').innerHTML = 'Bitte Betrag eingeben.';
+        return;
+      }
+      var mwst = betrag * steuersatz / 100;
+      var brutto = betrag + mwst;
+      document.getElementById('ergebnis').innerHTML = 'MwSt: ' + mwst.toFixed(2) + ' €<br>Bruttobetrag: ' + brutto.toFixed(2) + ' €';
+    }
+  </script>
+</body>
+</html>
