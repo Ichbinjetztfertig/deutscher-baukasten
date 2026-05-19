@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spritkosten-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Spritkosten-Rechner</h1>
+      <form id="fuel-form">
+        <div class="form-group">
+          <label for="distance">Strecke (km)</label>
+          <input type="number" id="distance" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label for="consumption">Verbrauch (l/100 km)</label>
+          <input type="number" id="consumption" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Preis pro Liter (€)</label>
+          <input type="number" id="price" step="0.01" required>
+        </div>
+        <button type="button" id="fuel-calc">Berechnen</button>
+      </form>
+      <p id="fuel-result"></p>
+      <a class="back-button" href="index.html">← Zurück zur Übersicht</a>
+    </div>
+  </div>
+  <footer>
+    © 2026 Deutscher Baukasten
+  </footer>
+  <script>
+    document.getElementById('fuel-calc').addEventListener('click', function() {
+      const distance = parseFloat(document.getElementById('distance').value);
+      const consumption = parseFloat(document.getElementById('consumption').value);
+      const price = parseFloat(document.getElementById('price').value);
+      if (distance >= 0 && consumption >= 0 && price >= 0) {
+        const fuelNeeded = (distance / 100) * consumption;
+        const cost = fuelNeeded * price;
+        document.getElementById('fuel-result').textContent = 'Gesamtkosten: ' + cost.toFixed(2) + ' €';
+      } else {
+        document.getElementById('fuel-result').textContent = 'Bitte gültige Werte eingeben.';
+      }
+    });
+  </script>
+</body>
+</html>
