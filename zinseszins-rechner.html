@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zinseszins-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Zinseszins-Rechner</h1>
+      <p>Berechne das Endkapital mit Zinseszins.</p>
+      <div class="form-group">
+        <label for="kapital">Startkapital (€):</label>
+        <input type="number" id="kapital" placeholder="Startkapital eingeben">
+      </div>
+      <div class="form-group">
+        <label for="zins">Zinssatz (% p.a.):</label>
+        <input type="number" id="zins" placeholder="Zinssatz eingeben">
+      </div>
+      <div class="form-group">
+        <label for="jahre">Laufzeit (Jahre):</label>
+        <input type="number" id="jahre" placeholder="Jahre eingeben">
+      </div>
+      <button onclick="berechnen()">Berechnen</button>
+      <div id="ergebnis" style="margin-top:10px; font-weight:bold;"></div>
+      <a class="back-button" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </div>
+  <script>
+    function berechnen() {
+      var kapital = parseFloat(document.getElementById('kapital').value);
+      var zins = parseFloat(document.getElementById('zins').value);
+      var jahre = parseFloat(document.getElementById('jahre').value);
+      if (isNaN(kapital) || isNaN(zins) || isNaN(jahre)) {
+        document.getElementById('ergebnis').innerHTML = 'Bitte alle Felder ausfüllen.';
+        return;
+      }
+      var endkapital = kapital * Math.pow(1 + zins / 100, jahre);
+      document.getElementById('ergebnis').innerHTML = 'Endkapital: ' + endkapital.toFixed(2) + ' €';
+    }
+  </script>
+</body>
+</html>
