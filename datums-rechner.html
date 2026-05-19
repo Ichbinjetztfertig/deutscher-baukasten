@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datums-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Datums-Rechner</h1>
+      <form id="date-form">
+        <div class="form-group">
+          <label for="start-date">Startdatum</label>
+          <input type="date" id="start-date" required>
+        </div>
+        <div class="form-group">
+          <label for="end-date">Enddatum</label>
+          <input type="date" id="end-date" required>
+        </div>
+        <button type="button" id="date-calc">Berechnen</button>
+      </form>
+      <p id="date-result"></p>
+      <a class="back-button" href="index.html">← Zurück zur Übersicht</a>
+    </div>
+  </div>
+  <footer>
+    © 2026 Deutscher Baukasten
+  </footer>
+  <script>
+    document.getElementById('date-calc').addEventListener('click', function() {
+      const start = document.getElementById('start-date').value;
+      const end = document.getElementById('end-date').value;
+      if (start && end) {
+        const startDate = new Date(start);
+        const endDate = new Date(end);
+        const diffMs = endDate - startDate;
+        const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
+        document.getElementById('date-result').textContent = 'Tage Unterschied: ' + diffDays;
+      } else {
+        document.getElementById('date-result').textContent = 'Bitte beide Daten wählen.';
+      }
+    });
+  </script>
+</body>
+</html>
