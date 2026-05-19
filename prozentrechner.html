@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prozentrechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Prozentrechner</h1>
+      <p>Berechne den Anteil eines Wertes in Prozent.</p>
+      <div class="form-group">
+        <label for="value">Wert:</label>
+        <input type="number" id="value" placeholder="Wert eingeben">
+      </div>
+      <div class="form-group">
+        <label for="percent">Prozent (%):</label>
+        <input type="number" id="percent" placeholder="Prozent eingeben">
+      </div>
+      <button onclick="berechnen()">Berechnen</button>
+      <p id="ergebnis" style="font-weight:bold; margin-top:10px;"></p>
+      <a class="back-button" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </div>
+  <script>
+    function berechnen() {
+      var value = parseFloat(document.getElementById('value').value);
+      var percent = parseFloat(document.getElementById('percent').value);
+      if (isNaN(value) || isNaN(percent)) {
+        document.getElementById('ergebnis').textContent = 'Bitte beide Werte eingeben.';
+        return;
+      }
+      var result = value * percent / 100;
+      document.getElementById('ergebnis').textContent = percent + '% von ' + value + ' = ' + result.toFixed(2);
+    }
+  </script>
+</body>
+</html>
