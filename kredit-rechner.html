@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kredit-Rechner - Deutscher Baukasten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Kredit-Rechner</h1>
+      <form id="loan-form">
+        <div class="form-group">
+          <label for="loan-amount">Kreditsumme (€)</label>
+          <input type="number" id="loan-amount" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="loan-years">Laufzeit (Jahre)</label>
+          <input type="number" id="loan-years" step="1" required>
+        </div>
+        <div class="form-group">
+          <label for="loan-rate">Zinssatz (%)</label>
+          <input type="number" id="loan-rate" step="0.01" required>
+        </div>
+        <button type="button" id="loan-calc">Berechnen</button>
+      </form>
+      <p id="loan-result"></p>
+      <a class="back-button" href="index.html">← Zurück zur Übersicht</a>
+    </div>
+  </div>
+  <footer>
+    © 2026 Deutscher Baukasten
+  </footer>
+  <script>
+    document.getElementById('loan-calc').addEventListener('click', function() {
+      const amount = parseFloat(document.getElementById('loan-amount').value);
+      const years = parseFloat(document.getElementById('loan-years').value);
+      const rate = parseFloat(document.getElementById('loan-rate').value);
+      if (amount > 0 && years > 0 && rate >= 0) {
+        const monthlyRate = rate / 100 / 12;
+        const totalPayments = years * 12;
+        const payment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -totalPayments));
+        document.getElementById('loan-result').textContent = 'Monatliche Rate: ' + payment.toFixed(2) + ' €';
+      } else {
+        document.getElementById('loan-result').textContent = 'Bitte gültige Werte eingeben.';
+      }
+    });
+  </script>
+</body>
+</html>
