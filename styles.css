@@ -199,3 +199,66 @@ button:hover,
 .back-button:hover {
   background: #005bb5;
 }
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #f7fbff 0%, #e0f2ff 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #004a84;
+}
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+.cta-button {
+  display: inline-block;
+  background-color: #0073e6;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background-color: #005bb5;
+}
+
+/* Tool grid */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.tool-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.tool-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+.legal-link {
+  color: #0073e6;
+  text-decoration: underline;
+}
+.legal-link:hover {
+  color: #005bb5;
+}
