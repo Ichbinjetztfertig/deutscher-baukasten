@@ -3,85 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deutscher Baukasten – Startseite</title>
-     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Deutscher Baukasten bietet kostenlose Online-Rechner und Tools für Alltag, Arbeit und Finanzen wie Prozentrechner, MwSt-Rechner, Zinseszinsrechner und mehr.">
-<meta name="keywords" content="Online Rechner, Prozentrechner, Mehrwertsteuer Rechner, Zinseszins Rechner, Arbeitsstunden Rechner, BMI Rechner, Kredit Rechner, Einheiten Umrechner, Datums Rechner, Noten Rechner, Spritkosten Rechner">
-<link rel="canonical" href="https://deutscherbaukasten.de/">
+  <title>Deutscher Baukasten – Kostenlose Online-Rechner</title>
+  <meta name="description" content="Kostenlose Online-Rechner und Tools für Alltag, Finanzen, Arbeit und mehr – Deutscher Baukasten">
+  <meta name="keywords" content="Prozentrechner, Mehrwertsteuer, MwSt, Zinseszins, Arbeitsstunden, BMI, Kreditrechner, Einheiten umrechnen, Datumsrechner, Notenrechner, Spritkosten">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://deutscherbaukasten.de/">
 </head>
 <body>
-
-<header>
-  <div class="logo">Deutscher <span>Baukasten</span></div>
-</header>
-
-<div class="wrapper">
-  <div class="card">
-    <h1>Willkommen beim Deutscher Baukasten</h1>
-    <p>Hier finden Sie kostenlose Online-Rechner und nützliche Tools für Alltag, Arbeit und Finanzen.</p>
-
-   
-            <div class="search-container" style="margin-top: 15px;">
-          <input type="text" id="search" placeholder="Suchbegriff eingeben..." onkeyup="filterList()" style="width: 100%; padding: 10px; border-radius: 8px; border:1px solid #ccc;">
+  <header>
+    <div class="logo">Deutscher <span>Baukasten</span></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Einfach rechnen im Alltag</h1>
+        <p>Entdecke unsere kostenlosen Tools für Finanzen, Arbeit und mehr.</p>
+        <a href="#tools" class="cta-button">Zu den Rechnern</a>
+      </div>
+    </section>
+    <div class="wrapper">
+      <div class="card">
+        <h2 id="tools">Rechner &amp; Tools</h2>
+        <div class="search-container">
+          <input type="text" id="search" placeholder="Suchbegriff eingeben..." onkeyup="filterList()">
         </div>
-<h2>Rechner &amp; Tools</h2>
-    <ul>
-      <li><a href="prozentrechner.html">Prozentrechner</a></li>
-      <li><a href="mwst-rechner.html">MwSt-Rechner</a></li>
-      <li><a href="zinseszins-rechner.html">Zinseszins-Rechner</a></li>
-      <li><a href="arbeitsstunden-rechner.html">Arbeitsstunden-Rechner</a></li>
-      <li><a href="bmi-rechner.html">BMI-Rechner</a></li>
-      <li><a href="kredit-rechner.html">Kredit-Rechner</a></li>
-      <li><a href="einheiten-umrechner.html">Einheiten-Umrechner</a></li>
-      <li><a href="datums-rechner.html">Datums-Rechner</a></li>
-      <li><a href="noten-rechner.html">Noten-Rechner</a></li>
-      <li><a href="spritkosten-rechner.html">Spritkosten-Rechner</a></li>
-    </ul>
-
-    
-            <script>
-          function filterList() {
-            var input = document.getElementById('search');
-            var filter = input.value.toLowerCase();
-            var ul = document.querySelector('ul');
-            var li = ul.getElementsByTagName('li');
-            for (var i = 0; i < li.length; i++) {
-              var a = li[i].getElementsByTagName('a')[0];
-              var textValue = a.textContent || a.innerText;
-              if (textValue.toLowerCase().indexOf(filter) > -1) {
-                li[i].style.display = '';
-              } else {
-                li[i].style.display = 'none';
-              }
-            }
-          }
-        </script>
-<p style="margin-top: 20px;">
-      <a class="back-button" href="impressum.html">Impressum</a>
-      <a class="back-button" href="datenschutz.html">Datenschutz</a>
+        <div class="tool-grid">
+          <a class="tool-card" href="prozentrechner.html">
+            <span class="tool-icon">%</span>
+            <span>Prozentrechner</span>
+          </a>
+          <a class="tool-card" href="mwst-rechner.html">
+            <span class="tool-icon">&#x20AC;</span>
+            <span>MwSt-Rechner</span>
+          </a>
+          <a class="tool-card" href="zinseszins-rechner.html">
+            <span class="tool-icon">&#x23E9;</span>
+            <span>Zinseszins-Rechner</span>
+          </a>
+          <a class="tool-card" href="arbeitsstunden-rechner.html">
+            <span class="tool-icon">&#x23F1;</span>
+            <span>Arbeitsstunden-Rechner</span>
+          </a>
+          <a class="tool-card" href="bmi-rechner.html">
+            <span class="tool-icon">&#x2696;</span>
+            <span>BMI-Rechner</span>
+          </a>
+          <a class="tool-card" href="kredit-rechner.html">
+            <span class="tool-icon">&#x1F4B3;</span>
+            <span>Kredit-Rechner</span>
+          </a>
+          <a class="tool-card" href="einheiten-umrechner.html">
+            <span class="tool-icon">&#x1F501;</span>
+            <span>Einheiten-Umrechner</span>
+          </a>
+          <a class="tool-card" href="datums-rechner.html">
+            <span class="tool-icon">&#x1F4C5;</span>
+            <span>Datums-Rechner</span>
+          </a>
+          <a class="tool-card" href="noten-rechner.html">
+            <span class="tool-icon">&#x1F5D8;</span>
+            <span>Noten-Rechner</span>
+          </a>
+          <a class="tool-card" href="spritkosten-rechner.html">
+            <span class="tool-icon">&#x26FD;</span>
+            <span>Spritkosten-Rechner</span>
+          </a>
+        </div>
+        <p style="margin-top: 20px;">
+          <a href="impressum.html" class="legal-link">Impressum</a> | 
+          <a href="datenschutz.html" class="legal-link">Datenschutz</a>
+        </p>
       </div>
     </div>
-    <footer>
-      &copy; 2026 Deutscher Baukasten
-    </footer>
-
-/    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#f2f2f2;border-top:1px solid #ccc;padding:15px;text-align:center;">
-      <span>Diese Website verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.</span>
-      <button id="accept-cookies" style="margin-left:10px;padding:5px 10px;">OK</button>
-    </div>
-    <script>
-      (function() {
-        var banner = document.getElementById('cookie-banner');
-        var accept = document.getElementById('accept-cookies');
-        if (!localStorage.getItem('cookies-accepted')) {
-          banner.style.display = 'block';
-        }
-        accept.addEventListener('click', function() {
-          localStorage.setItem('cookies-accepted', 'true');
-          banner.style.display = 'none';
-        });
-      })();
-    </script>
+  </main>
+  <footer>
+    &copy; 2026 Deutscher Baukasten
+  </footer>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#f2f2f2;border-top:1px solid #ccc;padding:15px;text-align:center;">
+    <span>Diese Website verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.</span>
+    <button id="accept-cookies" style="margin-left:10px;padding:5px 10px;">OK</button>
+  </div>
+  <script>
+    function filterList() {
+      var input = document.getElementById('search');
+      var filter = input.value.toLowerCase();
+      var cards = document.querySelectorAll('.tool-grid .tool-card');
+      cards.forEach(function(card) {
+        var text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    }
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      var accept = document.getElementById('accept-cookies');
+      if (!localStorage.getItem('cookies-accepted')) {
+        banner.style.display = 'block';
+      }
+      accept.addEventListener('click', function() {
+        localStorage.setItem('cookies-accepted', 'true');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
 </body>
-  </html>
 </html>
