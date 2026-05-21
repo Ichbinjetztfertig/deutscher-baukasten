@@ -155,7 +155,47 @@ footer {
 
   h1 {
     font-size: 32px;
-  }
+  }/* Theme variables and dark mode */
+:root {
+  --bg-color: #f4f5f7;
+  --text-color: #222;
+  --card-bg: #fff;
+  --card-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  --button-bg: #0066cc;
+  --button-hover-bg: #0052a3;
+}
+
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #e2e2e2;
+  --card-bg: #2c2c2c;
+  --card-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  --button-bg: #0052a3;
+  --button-hover-bg: #003f82;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.card {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+button,
+.back-button,
+.cta-button {
+  background: var(--button-bg);
+  color: #fff;
+}
+
+button:hover,
+.back-button:hover,
+.cta-button:hover {
+  background: var(--button-hover-bg);
+}
 
   h2 {
     font-size: 22px;
@@ -261,4 +301,47 @@ button:hover,
 }
 .legal-link:hover {
   color: #005bb5;
+}
+
+/* Status indicator styles for result */
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+}
+
+.status-bad {
+  background-color: #ffcccc;
+  color: #b91d47;
+}
+
+.status-mid {
+  background-color: #fff5cc;
+  color: #b58b00;
+}
+
+.status-good {
+  background-color: #ccffcc;
+  color: #1c7c1c;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-buttons button {
+  padding: 8px 16px;
+  background-color: var(--button-bg);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background-color: var(--button-hover-bg);
 }
